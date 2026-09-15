@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#102a43" />
+  <meta name="description" content="Threads 고객 운영, 콘텐츠, 성과와 보고서를 한곳에서 관리합니다." />
+  <title>Threads 운영 매니저</title>
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='16' fill='%23102a43'/%3E%3Cpath d='M18 20h28M18 32h20M18 44h28' stroke='%237ee0c2' stroke-width='6' stroke-linecap='round'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="./styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><span class="brand-mark">T</span><div><strong>Threads 운영</strong><small>클라이언트 워크스페이스</small></div></div>
+      <nav id="mainNav" aria-label="주 메뉴"></nav>
+      <div class="side-footer"><span class="status-dot"></span><span>로컬 저장 활성화</span><button class="icon-btn" id="closeNav" aria-label="메뉴 닫기">×</button></div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-btn" id="openNav" aria-label="메뉴 열기">☰</button>
+        <div><h1 id="pageTitle">대시보드</h1><p id="pageSubtitle">오늘 처리할 업무와 핵심 성과를 확인하세요.</p></div>
+        <div class="top-actions"><select id="globalClient" aria-label="고객 선택"></select><button class="btn secondary" data-action="quick-content">+ 콘텐츠 추가</button></div>
+      </header>
+      <div class="workspace" id="workspace"></div>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop hidden" id="modalBackdrop"><section class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal-head"><h2 id="modalTitle"></h2><button class="icon-btn" data-close-modal aria-label="닫기">×</button></div><div id="modalBody"></div></section></div>
+  <input type="file" id="fileInput" accept=".json,.csv,application/json,text/csv" hidden />
+  <script src="./app.js"></script>
+</body>
+</html>
